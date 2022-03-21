@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class MoniColors {
   const MoniColors._(); // this basically makes it so you can't instantiate this class
 
+  //-----------------------------------------------
+  static const Color backgroundDark = Color(0xFF333333);
+  static const Color backgroundLight = Color(0xFFCDCFD0);
+
   static const Color primaryDark = Color(0xFFE66652);
   static const Color primaryLight = Color(0xFFE66652);
 
