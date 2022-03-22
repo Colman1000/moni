@@ -22,7 +22,7 @@ class MoniFilledButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
         primary: color ?? MoniColors.primaryBase,
-        padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 24)
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24)
       ),
     );
   }

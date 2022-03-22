@@ -20,7 +20,7 @@ class InfoPill extends StatelessWidget {
       borderRadius: BorderRadius.circular(50),
       color: MoniColors.darkDarkest,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
         child: Row(
           children: [
             MoniText('$label:' , color: MoniColors.greyBase,),

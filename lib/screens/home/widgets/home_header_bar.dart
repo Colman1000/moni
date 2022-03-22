@@ -23,10 +23,10 @@ class HomeHeaderBar extends StatelessWidget {
             "My cluster",
             align: TextAlign.center,
             textType: MoniTextType.header,
+            weight: FontWeight.w700,
             color: MoniColors.light,
-            bold: true,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           Row(
             children: [
               Column(
@@ -58,11 +58,11 @@ class HomeHeaderBar extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           MoniDivider(
             space: 5,
-            color: MoniColors.greyDark.withOpacity(0.3),
-            thickness: 0,
+            color: MoniColors.greyDark.withOpacity(0.2),
+            thickness: 1.5,
           ),
           const SizedBox(height: 10),
           Row(
@@ -100,8 +100,8 @@ class HomeHeaderBar extends StatelessWidget {
           const SizedBox(height: 10),
           MoniDivider(
             space: 5,
-            color: MoniColors.greyDark.withOpacity(0.3),
-            thickness: 0,
+            color: MoniColors.greyDark.withOpacity(0.2),
+            thickness: 1.5,
           ),
           const SizedBox(height: 10),
           Row(
@@ -114,8 +114,8 @@ class HomeHeaderBar extends StatelessWidget {
           const SizedBox(height: 10),
           MoniDivider(
             space: 5,
-            color: MoniColors.greyDark.withOpacity(0.3),
-            thickness: 0,
+            color: MoniColors.greyDark.withOpacity(0.2),
+            thickness: 1.5,
           ),
           const SizedBox(height: 10),
           Row(

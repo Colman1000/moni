@@ -22,13 +22,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: const [
-          HomeHeaderBar(),
-          Expanded(
-            child: HomeTabView(),
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: const [
+            HomeHeaderBar(),
+            Expanded(
+              child: HomeTabView(),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -31,7 +31,7 @@ class MoniText extends StatelessWidget {
             : textType == MoniTextType.large
                 ? _theme.labelLarge
                 : textType == MoniTextType.tiny
-                    ? _theme.caption?.copyWith(fontSize: 10)
+                    ? _theme.caption?.copyWith(fontSize: 11)
                     : _theme.bodyMedium;
 
     final _style = _textTheme?.copyWith(
