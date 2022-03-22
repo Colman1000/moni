@@ -19,6 +19,18 @@ class MoniTheme {
       secondary: MoniColors.secondaryBase,
       surface: MoniColors.backgroundLight,
     ),
+    tabBarTheme: const TabBarTheme(
+      labelColor: MoniColors.primaryBase,
+      unselectedLabelColor: MoniColors.dark,
+      indicator: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: MoniColors.primaryBase,
+            width: 2,
+          ),
+        ),
+      ),
+    ),
     useMaterial3: true,
   );
 
@@ -38,7 +50,7 @@ class MoniTheme {
     useMaterial3: true,
   );
 
-  static ThemeData get dark => _dark;
+  static ThemeData get dark => _light;
 
-  static ThemeData get light => _light;
+  static ThemeData get light => _dark;
 }
