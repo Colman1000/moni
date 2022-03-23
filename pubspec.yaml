@@ -9,7 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  mockito: any
+  http: ^0.13.4
+  provider: ^6.0.2
+  font_awesome_flutter: ^10.0.0
 dev_dependencies:
   test: any
   flutter_test:
@@ -17,6 +19,8 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/BG.png
   fonts:
     - family: DM
       fonts:
