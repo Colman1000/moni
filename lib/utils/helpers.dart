@@ -37,7 +37,8 @@ class Helpers {
 }
 
 class Format {
-  static const String _currency = '₦';
+  // static const String _currency = '₦';
+  static const String _currency = 'N';
 
   static String toCurrency(num amount) {
     final number = amount.round().toString().replaceAllMapped(

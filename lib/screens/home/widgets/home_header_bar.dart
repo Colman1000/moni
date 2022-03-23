@@ -3,12 +3,12 @@ import 'package:moni/config/assets.dart';
 import 'package:moni/config/colors.dart';
 import 'package:moni/providers/cluster_model.dart';
 import 'package:moni/utils/helpers.dart';
-import 'package:provider/provider.dart';
 import 'package:moni/widgets/buttons/moni_filled_button.dart';
 import 'package:moni/widgets/moni_avatar.dart';
 import 'package:moni/widgets/moni_divider.dart';
 import 'package:moni/widgets/moni_info_pill.dart';
 import 'package:moni/widgets/moni_text.dart';
+import 'package:provider/provider.dart';
 
 class HomeHeaderBar extends StatelessWidget {
   const HomeHeaderBar({Key? key}) : super(key: key);
