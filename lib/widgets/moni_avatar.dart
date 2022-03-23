@@ -69,18 +69,10 @@ class MoniAvatar extends StatelessWidget {
                 return _nameAvatar;
               },
               loadingBuilder: (context, child, p) {
-                return p?.expectedTotalBytes == null
-                    ? const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: CircularProgressIndicator(),
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: CircularProgressIndicator(
-                          value:
-                              p!.cumulativeBytesLoaded / p.expectedTotalBytes!,
-                        ),
-                      );
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(),
+                );
               },
             ),
     );
