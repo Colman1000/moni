@@ -4,17 +4,17 @@ import 'package:moni/widgets/moni_avatar.dart';
 import 'package:moni/widgets/moni_text.dart';
 
 class MoniLoanTile extends StatelessWidget {
-  const MoniLoanTile(
-    this.userImageUrl, {
+  const MoniLoanTile({
     Key? key,
     required this.user,
+    this.userImageUrl,
     this.subtitle,
     this.time,
     this.timeColor,
     this.subtitleColor,
   }) : super(key: key);
 
-  final String userImageUrl;
+  final String? userImageUrl;
   final String user;
   final String? subtitle;
   final String? time;
@@ -25,7 +25,8 @@ class MoniLoanTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: MoniAvatar(
-        userImageUrl,
+        name: user,
+        imageUrl: userImageUrl,
         size: 40,
       ),
       title: Row(
@@ -59,7 +60,8 @@ class MoniLoanTile extends StatelessWidget {
         (subtitle?.isNotEmpty ?? false) ? subtitle! : "No active loan",
         textType: MoniTextType.subtitle,
         color: subtitleColor,
-        weight: (subtitle?.isNotEmpty ?? false) ?FontWeight.w700 : FontWeight.w300,
+        weight:
+            (subtitle?.isNotEmpty ?? false) ? FontWeight.w700 : FontWeight.w300,
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:moni/config/colors.dart';
-import 'package:moni/screens/home/home.dart';
+import 'package:moni/providers/cluster_model.dart';
 import 'package:moni/screens/home/widgets/cluster_detail_header.dart';
 import 'package:moni/widgets/buttons/moni_text_button.dart';
 import 'package:moni/widgets/moni_divider.dart';
@@ -12,6 +13,10 @@ class ClusterDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final _clusterModel = context.watch<ClusterModel>();
+    final _clusterDetail = _clusterModel.detail;
+
     return Material(
       color: MoniColors.light,
       child: Padding(
@@ -22,11 +27,14 @@ class ClusterDetailView extends StatelessWidget {
               delegate: SliverChildListDelegate.fixed(
                 [
                   const ClusterDetailHeader(
-                    label: "Cluster purse setting",
+                    label: "Cluster purse settings",
                     icon: CircleAvatar(
                       radius: 20,
-                      child: MoniText("N",
-                          bold: true, textType: MoniTextType.subtitle),
+                      child: MoniText(
+                        "N",
+                        bold: true,
+                        textType: MoniTextType.subtitle,
+                      ),
                       backgroundColor: MoniColors.muted,
                     ),
                   ),
@@ -119,22 +127,22 @@ class ClusterDetailView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          MoniText(
+                        children:  [
+                          const MoniText(
                             "Total loan collected by cluster",
                             weight: FontWeight.w400,
                             textType: MoniTextType.subtitle,
                           ),
-                          SizedBox(height: 5),
-                          MoniText("N550,000,000", weight: FontWeight.w700),
-                          SizedBox(height: 10),
-                          MoniText(
+                          const SizedBox(height: 5),
+                          const MoniText("N550,000,000", weight: FontWeight.w700),
+                          const SizedBox(height: 10),
+                          const MoniText(
                             "Repayment day",
                             weight: FontWeight.w400,
                             textType: MoniTextType.subtitle,
                           ),
-                          SizedBox(height: 5),
-                          MoniText("Every Monday", weight: FontWeight.w700),
+                          const SizedBox(height: 5),
+                          MoniText(_clusterDetail.repaymentDayString, weight: FontWeight.w700),
                         ],
                       ),
                       const Spacer(),
