@@ -24,4 +24,4 @@ Flutter Mobile Engineer Test
 
 ## OR
 
-> Download precompiled app from _https://drive.google.com/file/d/15MaLi0RDFnGQVkY5YT9B7N6Zwiqax89L/view?usp=sharing_
+> Download precompiled app from from the */app* directory or use this link -> _https://drive.google.com/file/d/1Qlet0eTuDZ2R4CIOB8SHHD-EXwujTMph/view?usp=sharing_
