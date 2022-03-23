@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 import 'package:moni/config/colors.dart';
 import 'package:moni/providers/cluster_model.dart';
 import 'package:moni/screens/home/widgets/cluster_detail_header.dart';
+import 'package:moni/utils/helpers.dart';
 import 'package:moni/widgets/buttons/moni_text_button.dart';
 import 'package:moni/widgets/moni_divider.dart';
 import 'package:moni/widgets/moni_text.dart';
 import 'package:moni/widgets/moni_text_list.dart';
+import 'package:provider/provider.dart';
 
 class ClusterDetailView extends StatelessWidget {
   const ClusterDetailView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     final _clusterModel = context.watch<ClusterModel>();
     final _clusterDetail = _clusterModel.detail;
 
@@ -45,15 +45,19 @@ class ClusterDetailView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          MoniText(
+                        children: [
+                          const MoniText(
                             "Frequency of contribution",
                             weight: FontWeight.w300,
                           ),
-                          SizedBox(height: 10),
-                          MoniText("Monthly Upfront", weight: FontWeight.w400),
-                          SizedBox(height: 10),
-                          MoniText("N550,000,000", weight: FontWeight.w700),
+                          const SizedBox(height: 10),
+                          const MoniText("Monthly Upfront",
+                              weight: FontWeight.w400),
+                          const SizedBox(height: 10),
+                          MoniText(
+                            Format.toCurrency(550000000),
+                            weight: FontWeight.w700,
+                          ),
                         ],
                       ),
                       const Spacer(),
@@ -128,14 +132,17 @@ class ClusterDetailView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children:  [
+                        children: [
                           const MoniText(
                             "Total loan collected by cluster",
                             weight: FontWeight.w400,
                             textType: MoniTextType.subtitle,
                           ),
                           const SizedBox(height: 5),
-                          const MoniText("N550,000,000", weight: FontWeight.w700),
+                          MoniText(
+                            Format.toCurrency(550000000),
+                            weight: FontWeight.w700,
+                          ),
                           const SizedBox(height: 10),
                           const MoniText(
                             "Repayment day",
@@ -143,7 +150,8 @@ class ClusterDetailView extends StatelessWidget {
                             textType: MoniTextType.subtitle,
                           ),
                           const SizedBox(height: 5),
-                          MoniText(_clusterDetail.repaymentDayString, weight: FontWeight.w700),
+                          MoniText(_clusterDetail.repaymentDayString,
+                              weight: FontWeight.w700),
                         ],
                       ),
                       const Spacer(),
@@ -232,8 +240,8 @@ class ClusterDetailView extends StatelessWidget {
                     weight: FontWeight.w300,
                   ),
                   const SizedBox(height: 10),
-                  const MoniText(
-                    "N550,000,000",
+                  MoniText(
+                    Format.toCurrency(550000000),
                     weight: FontWeight.w500,
                   ),
                   const SizedBox(height: 12),
@@ -243,13 +251,13 @@ class ClusterDetailView extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Row(
-                    children: const [
+                    children: [
                       MoniText(
-                        "N550,000,000",
+                        Format.toCurrency(550000000),
                         weight: FontWeight.w500,
                       ),
-                      Spacer(),
-                      MoniText(
+                      const Spacer(),
+                      const MoniText(
                         "+N5000 today",
                         weight: FontWeight.w400,
                         color: MoniColors.greenLighter,
