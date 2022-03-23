@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:moni/config/colors.dart';
 import 'package:moni/providers/cluster_model.dart';
@@ -31,11 +32,11 @@ class ClusterDetailView extends StatelessWidget {
                     icon: CircleAvatar(
                       radius: 20,
                       child: MoniText(
-                        "N",
+                        "₦",
                         bold: true,
                         textType: MoniTextType.subtitle,
                       ),
-                      backgroundColor: MoniColors.muted,
+                      backgroundColor: MoniColors.grey,
                     ),
                   ),
                   Row(
@@ -78,7 +79,7 @@ class ClusterDetailView extends StatelessWidget {
                 [
                   const ClusterDetailHeader(
                     label: "Group invite Link/Code",
-                    icon: Icon(Icons.link),
+                    icon: FaIcon(FontAwesomeIcons.link, size: 16),
                   ),
                   const MoniText(
                     "Use the link or code below to invite new member",
@@ -119,7 +120,7 @@ class ClusterDetailView extends StatelessWidget {
                 [
                   const ClusterDetailHeader(
                     label: "Loan settings",
-                    icon: Icon(Icons.format_list_numbered_sharp),
+                    icon: FaIcon(FontAwesomeIcons.listCheck, size: 16),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -162,7 +163,7 @@ class ClusterDetailView extends StatelessWidget {
                 [
                   ClusterDetailHeader(
                     label: "Pending Join Request",
-                    icon: Icon(Icons.format_list_numbered_sharp),
+                    icon: FaIcon(FontAwesomeIcons.listCheck, size: 16),
                   ),
                   MoniText(
                     "No pending cluster join request",
@@ -224,7 +225,7 @@ class ClusterDetailView extends StatelessWidget {
                 [
                   const ClusterDetailHeader(
                     label: "Benefits earned",
-                    icon: Icon(Icons.payments_outlined),
+                    icon: FaIcon(FontAwesomeIcons.moneyBill1Wave, size: 16),
                   ),
                   const MoniText(
                     "Total CH benefits earned",

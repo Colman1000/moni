@@ -17,7 +17,7 @@ class ClusterDetailHeader extends StatelessWidget {
       leading: SizedBox(
         height: 25,
         width: 25,
-        child: icon,
+        child: Center(child: icon),
       ),
       title: MoniText(
         label,

@@ -60,9 +60,14 @@ class ClusterDetail {
   String get repaymentDayString =>
       repaymentDay.isEmpty ? ' - ' : 'Every $repaymentDay';
 
-  String get formattedPurseBalance => purseBalance < 1 ? ' - ': Format.toCurrency(purseBalance);
-  String get formattedTotalInterest => totalInterestEarned < 1 ? ' - ': Format.toCurrency(totalInterestEarned);
-  String get formattedTotalOwed => totalOwedByMembers < 1 ? ' - ': Format.toCurrency(totalOwedByMembers);
+  String get formattedPurseBalance =>
+      purseBalance < 1 ? ' - ' : Format.toCurrency(purseBalance);
+
+  String get formattedTotalInterest =>
+      totalInterestEarned < 1 ? ' - ' : Format.toCurrency(totalInterestEarned);
+
+  String get formattedTotalOwed =>
+      totalOwedByMembers < 1 ? ' - ' : Format.toCurrency(totalOwedByMembers);
 
   final String name;
   final num repaymentRate;
