@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:moni/config/assets.dart';
 import 'package:moni/config/colors.dart';
-import 'package:moni/config/constants.dart';
 import 'package:moni/providers/cluster_model.dart';
 import 'package:moni/utils/helpers.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +21,7 @@ class HomeHeaderBar extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(Constants.backgroundImage), fit: BoxFit.cover),
+            image: AssetImage(Assets.backgroundImage), fit: BoxFit.cover),
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 16,

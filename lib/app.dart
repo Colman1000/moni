@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moni/config/assets.dart';
 import 'package:moni/config/constants.dart';
 import 'package:moni/config/theme.dart';
 import 'package:http/http.dart' as http;
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     precacheImage(
-      const AssetImage(Constants.backgroundImage),
+      const AssetImage(Assets.backgroundImage),
       context,
     ); //preload background image
 
