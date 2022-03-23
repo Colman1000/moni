@@ -59,7 +59,7 @@ class LoanAgent {
     }
 
     final _diff = _date.daysBetween();
-    final _prefix = '$_diff days${_diff < 2 ? '' : 's'}';
+    final _prefix = '$_diff day${_diff < 2 ? '' : 's'}';
 
     return '$_prefix ${status == LoanDateStatus.overdue ? 'over due' : 'to due date'}';
   }
