@@ -18,63 +18,53 @@ class MoniAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     final _color = Colors.primaries[name.length % Colors.primaries.length];
 
-   final _nameAvatar =  Container(
-      height: size,
-      width: size,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: <Color>[_color.shade300, _color.shade800],
-          )),
-      child: Center(
-        child: MoniText(
-          name[0].toUpperCase(),
-          weight: FontWeight.w700,
-          color: _color.computeLuminance() < 6
-              ? MoniColors.light
-              : MoniColors.dark,
-        ),
+    final _rad = BorderRadius.circular(12);
+
+    final _name = Center(
+      child: MoniText(
+        name[0].toUpperCase(),
+        weight: FontWeight.w700,
+        color:
+            _color.computeLuminance() < 6 ? MoniColors.light : MoniColors.dark,
       ),
     );
 
-    return Container(
+    final _decor = BoxDecoration(
+      borderRadius: _rad,
+      gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: <Color>[_color.shade300, _color.shade800],
+      ),
+    );
+
+    final _nameAvatar = Container(
       height: size,
       width: size,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        gradient: imageUrl == null
-            ? LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: <Color>[_color.shade300, _color.shade800],
-              )
-            : null,
-      ),
-      child: imageUrl == null
-          ? Center(
-              child: MoniText(
-                name[0].toUpperCase(),
-                weight: FontWeight.w700,
-                color: _color.computeLuminance() < 6
-                    ? MoniColors.light
-                    : MoniColors.dark,
+      decoration: _decor,
+      child: _name,
+    );
+
+    return ClipRRect(
+      borderRadius: _rad,
+      child: Container(
+        height: size,
+        width: size,
+        color: MoniColors.grey,
+        child: imageUrl == null
+            ? _nameAvatar
+            : Image.network(
+                imageUrl!,
+                fit: BoxFit.cover,
+                errorBuilder: (c, err, trace) => _nameAvatar,
+                loadingBuilder: (context, child, p) {
+                  if (p == null) return child;
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
               ),
-            )
-          : Image.network(
-              imageUrl!,
-              fit: BoxFit.cover,
-              errorBuilder: (context, _err, trace) {
-                return _nameAvatar;
-              },
-              loadingBuilder: (context, child, p) {
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CircularProgressIndicator(),
-                );
-              },
-            ),
+      ),
     );
   }
 }
